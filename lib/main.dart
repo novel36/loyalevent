@@ -1,8 +1,10 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:loyalevent/footer.dart';
 import 'package:loyalevent/mission.dart';
 import 'package:loyalevent/next_event.dart';
+import 'package:loyalevent/testimonial.dart';
 import 'package:loyalevent/upcoming_event.dart';
 
 void main() {
@@ -45,17 +47,48 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    color: Colors.grey,
                     height: 50,
-                    width: 100,
+                    padding: EdgeInsets.all(8.0),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Icon(
+                            Icons.loyalty,
+                            size: 36,
+                          ),
+                          SizedBox(width: 16),
+                          Text(
+                            "Loyal Events",
+                            style: TextStyle(
+                                fontSize: 26, fontWeight: FontWeight.bold),
+                          )
+                        ]),
                   ),
                   SizedBox(
-                    width: 50,
+                    width: 70,
                   ),
                   Expanded(
                       child: Container(
-                    color: Colors.grey,
+                    // color: Colors.grey,
+                    padding: EdgeInsets.only(left: 32),
                     height: 50,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        TextButton(onPressed: () {}, child: Text("Home")),
+                        TextButton(onPressed: () {}, child: Text("Event")),
+                        TextButton(onPressed: () {}, child: Text("Venue")),
+                        TextButton(onPressed: () {}, child: Text("Gallery")),
+                        TextButton(onPressed: () {}, child: Text("Contact us")),
+                        ElevatedButton(
+                            style: ButtonStyle(),
+                            onPressed: () {},
+                            child: Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Text("Register"),
+                            )),
+                      ],
+                    ),
                   )),
                   SizedBox(
                     width: 50,
@@ -78,9 +111,25 @@ class _MyHomePageState extends State<MyHomePage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          height: 100,
-                          width: 300,
-                          color: Colors.grey,
+                          height: 180,
+                          width: 350,
+                          child: Text(
+                            "A good place to Find the perfect event",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 48,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        Text(
+                          "We can make Your dream come true",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
                         ),
                         SizedBox(
                           height: 32,
@@ -88,18 +137,30 @@ class _MyHomePageState extends State<MyHomePage> {
                         Row(
                           children: [
                             Container(
-                              height: 45,
-                              width: 100,
-                              color: Colors.grey,
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 16.0, vertical: 8.0),
+                              alignment: Alignment.center,
+                              color: Colors.purple,
+                              child: Text(
+                                "About us",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white),
+                              ),
                             ),
                             SizedBox(
                               width: 20,
                             ),
                             Container(
-                              height: 45,
-                              width: 100,
-                              color: Colors.grey,
-                            )
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 16.0, vertical: 8.0),
+                              alignment: Alignment.center,
+                              color: Colors.deepPurple,
+                              child: Text(
+                                "Book Events",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white),
+                              ),
+                            ),
                           ],
                         )
                       ],
@@ -125,17 +186,10 @@ class _MyHomePageState extends State<MyHomePage> {
             // mission
             Mission(), SizedBox(height: 20),
             // testimonial
-            Container(
-              height: 400,
-              color: Colors.grey,
-            ),
+            Testimonial(),
             SizedBox(height: 20),
             // Footer
-            Container(
-              height: 500,
-              color: Colors.grey,
-            ),
-            SizedBox(height: 20),
+            Footer(),
           ],
         ));
   }
