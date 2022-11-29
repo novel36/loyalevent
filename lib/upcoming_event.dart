@@ -20,63 +20,156 @@ class UpcomingEvent extends StatelessWidget {
           Card(
             child: Row(
               children: [
+                // Image(image: AssetImage('assets/images/event1.jpg'),),8
                 Container(
-                  decoration: const BoxDecoration(
+                  width: 350,
+                  decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("assets/events"),
-                          alignment: Alignment.center)),
-                  width: 250,
+                          image: AssetImage('assets/images/party.jpg'),
+                          fit: BoxFit.cover)),
                 ),
                 Expanded(
-                    flex: 2,
-                    child: Container(
-                      color: Colors.blue,
-                    ))
+                  flex: 2,
+                  child: Container(
+                    padding: EdgeInsets.all(16.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text("Music For Life"),
+                            Text(
+                                "Music For Life Music For Life Music For Life Music For Life Music For Life Music For Life"),
+                          ],
+                        )),
+                        Expanded(
+                          child: Container(
+                            color: Colors.grey,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
           ),
           Card(
             child: Row(
               children: [
+                // Image(image: AssetImage('assets/images/event1.jpg'),),8
                 Container(
-                  color: Colors.green,
-                  width: 250,
+                  width: 350,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('assets/images/party.jpg'),
+                          fit: BoxFit.cover)),
                 ),
                 Expanded(
-                    flex: 2,
-                    child: Container(
-                      color: Colors.blue,
-                    ))
+                  flex: 2,
+                  child: Container(
+                    padding: EdgeInsets.all(16.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text("Music For Life"),
+                            Text(
+                                "Music For Life Music For Life Music For Life Music For Life Music For Life Music For Life"),
+                          ],
+                        )),
+                        Expanded(
+                          child: Container(
+                            color: Colors.grey,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
           ),
           Card(
             child: Row(
               children: [
+                // Image(image: AssetImage('assets/images/event1.jpg'),),8
                 Container(
-                  color: Colors.green,
-                  width: 250,
+                  width: 350,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('assets/images/event3.jpg'),
+                          fit: BoxFit.cover)),
                 ),
                 Expanded(
-                    flex: 2,
-                    child: Container(
-                      color: Colors.blue,
-                    ))
+                  flex: 2,
+                  child: Container(
+                    padding: EdgeInsets.all(16.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text("Music For Life"),
+                            Text(
+                                "Music For Life Music For Life Music For Life Music For Life Music For Life Music For Life"),
+                          ],
+                        )),
+                        Expanded(
+                          child: Container(
+                            color: Colors.grey,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
           ),
           Card(
             child: Row(
               children: [
+                // Image(image: AssetImage('assets/images/event1.jpg'),),8
                 Container(
-                  color: Colors.green,
-                  width: 250,
+                  width: 350,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('assets/images/assetone.jpg'),
+                          fit: BoxFit.cover)),
                 ),
                 Expanded(
-                    flex: 2,
-                    child: Container(
-                      color: Colors.blue,
-                    ))
+                  flex: 2,
+                  child: Container(
+                    padding: EdgeInsets.all(16.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                            child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text("Music For Life"),
+                            Text(
+                                "Music For Life Music For Life Music For Life Music For Life Music For Life Music For Life"),
+                          ],
+                        )),
+                        Expanded(
+                          child: Container(
+                            color: Colors.grey,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
           ),
