@@ -1,6 +1,10 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:loyalevent/Contactus/contactus.dart';
+import 'package:loyalevent/EventPage/event.dart';
+import 'package:loyalevent/Home/home.dart';
+import 'package:loyalevent/VenuePage/venue.dart';
 import 'package:loyalevent/footer.dart';
 import 'package:loyalevent/mission.dart';
 import 'package:loyalevent/next_event.dart';
@@ -32,7 +36,16 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage>
+    with SingleTickerProviderStateMixin {
+  late TabController _controller;
+  @override
+  void initState() {
+    super.initState();
+    _controller = TabController(
+        vsync: this, length: 5, animationDuration: Duration(seconds: 0));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,17 +82,71 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Expanded(
                       child: Container(
-                    // color: Colors.grey,
                     padding: EdgeInsets.only(left: 32),
                     height: 50,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        TextButton(onPressed: () {}, child: Text("Home")),
-                        TextButton(onPressed: () {}, child: Text("Event")),
-                        TextButton(onPressed: () {}, child: Text("Venue")),
-                        TextButton(onPressed: () {}, child: Text("Gallery")),
-                        TextButton(onPressed: () {}, child: Text("Contact us")),
+                        TextButton(
+                            onPressed: () {
+                              _controller.animateTo(
+                                0,
+                              );
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(9.0),
+                              child: Text(
+                                "Home",
+                                style: TextStyle(color: Colors.pink),
+                              ),
+                            )),
+                        SizedBox(
+                          width: 8.0,
+                        ),
+                        TextButton(
+                            onPressed: () {
+                              _controller.animateTo(1);
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(9.0),
+                              child: Text("Event"),
+                            )),
+                        SizedBox(
+                          width: 8.0,
+                        ),
+                        TextButton(
+                            onPressed: () {
+                              _controller.animateTo(2);
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(9.0),
+                              child: Text("Venue"),
+                            )),
+                        SizedBox(
+                          width: 8.0,
+                        ),
+                        TextButton(
+                            onPressed: () {
+                              _controller.animateTo(3);
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(9.0),
+                              child: Text("Gallery"),
+                            )),
+                        SizedBox(
+                          width: 8.0,
+                        ),
+                        TextButton(
+                            onPressed: () {
+                              _controller.animateTo(4);
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(9.0),
+                              child: Text("Contact us"),
+                            )),
+                        SizedBox(
+                          width: 16.0,
+                        ),
                         ElevatedButton(
                             style: ButtonStyle(),
                             onPressed: () {},
@@ -98,99 +165,18 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ),
-        body: ListView(
-          children: [
-            // hero
-            Container(
-                padding: EdgeInsets.only(left: 96.0),
-                child: Stack(
-                  alignment: AlignmentDirectional.centerStart,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          height: 180,
-                          width: 350,
-                          child: Text(
-                            "A good place to Find the perfect event",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 48,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 16,
-                        ),
-                        Text(
-                          "We can make Your dream come true",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(
-                          height: 32,
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 16.0, vertical: 8.0),
-                              alignment: Alignment.center,
-                              color: Colors.purple,
-                              child: Text(
-                                "About us",
-                                style: TextStyle(
-                                    fontSize: 16, color: Colors.white),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 16.0, vertical: 8.0),
-                              alignment: Alignment.center,
-                              color: Colors.deepPurple,
-                              child: Text(
-                                "Book Events",
-                                style: TextStyle(
-                                    fontSize: 16, color: Colors.white),
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                    Positioned(
-                        bottom: 40,
-                        right: 64,
-                        child: Container(
-                          color: Colors.grey,
-                          width: 200,
-                          height: 200,
-                        ))
-                  ],
-                ),
-                height: 450,
-                color: Colors.red),
-            SizedBox(height: 20),
-            // next event
-            NextEvent(),
-            SizedBox(height: 20),
-            // upcoming event
-            UpcomingEvent(), SizedBox(height: 20),
-            // mission
-            Mission(), SizedBox(height: 20),
-            // testimonial
-            Testimonial(),
-            SizedBox(height: 20),
-            // Footer
-            Footer(),
-          ],
-        ));
+        body: TabBarView(
+            physics: NeverScrollableScrollPhysics(),
+            controller: _controller,
+            children: [
+              HomePage(),
+              EventPage(),
+              VenuePage(),
+              Container(
+                color: Colors.green,
+                child: Text("Gallery"),
+              ),
+              ContactUs()
+            ]));
   }
 }

@@ -61,8 +61,8 @@ class Testimonial extends StatelessWidget {
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                   fit: BoxFit.contain,
-                                  image:
-                                      AssetImage("assets/images/events.jpg"))),
+                                  image: AssetImage(
+                                      "assets/images/teddyafiro.jpg"))),
                         )),
                   ],
                 ),

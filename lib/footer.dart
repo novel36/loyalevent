@@ -12,6 +12,7 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 400,
+      padding: EdgeInsets.only(top: 16.0),
       color: Colors.black87,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -112,15 +113,14 @@ class Footer extends StatelessWidget {
                       padding: EdgeInsets.all(8.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                              padding: EdgeInsets.all(8.0),
+                              padding: EdgeInsets.only(left: 8.0),
                               child: Text(
                                 "Loyal events",
                                 style: TextStyle(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
+                                    fontSize: 24, color: Colors.white),
                               )),
                           Container(
                               alignment: Alignment.center,
@@ -135,27 +135,141 @@ class Footer extends StatelessWidget {
                             margin: EdgeInsets.only(right: 16.0, left: 8.0),
                             child: TextField(
                                 decoration: InputDecoration(
-                                    border: OutlineInputBorder(),
-                                    suffixIcon: Icon(Icons.send))),
+                              hintText: "Enter your feedback",
+                              hintStyle: TextStyle(
+                                  fontSize: 12, color: Colors.white60),
+                              suffixIcon: Icon(
+                                Icons.send,
+                                color: Colors.white,
+                              ),
+                              enabledBorder: new OutlineInputBorder(
+                                borderRadius: new BorderRadius.circular(8.0),
+                                borderSide: BorderSide(color: Colors.white),
+                              ),
+                              focusedBorder: new OutlineInputBorder(
+                                borderRadius: new BorderRadius.circular(25.0),
+                                borderSide: BorderSide(color: Colors.white),
+                              ),
+                            )),
                           )
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 64,
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(top: 16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                            flex: 1,
+                            child: Text(
+                              "Services",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 24),
+                            )),
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Exhibition",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              Text(
+                                "Conference",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              Text("Festival",
+                                  style: TextStyle(color: Colors.white)),
+                              Text("Party",
+                                  style: TextStyle(color: Colors.white)),
+                              Text(
+                                "Seminar",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 64,
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(top: 16.0),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                              flex: 1,
+                              child: Text(
+                                "Follow us on ",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 24),
+                              )),
+                          Expanded(
+                            flex: 2,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(Icons.facebook, color: Colors.white),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      "Facebook",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Icon(Icons.facebook, color: Colors.white),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      "Google",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Icon(Icons.facebook, color: Colors.white),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      "Twitter",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     ),
                   ),
                   Expanded(
                     child: Container(
-                        // color: Colors.cyan,
-                        ),
-                  ),
-                  Expanded(
-                    child: Container(
-                        // color: Colors.purple,
-                        ),
-                  ),
-                  Expanded(
-                    child: Container(
-                        // color: Colors.blueGrey,
-                        ),
+                        child: Image(
+                      image: AssetImage("assets/images/buna.jpg"),
+                    )),
                   ),
                 ],
               ),
@@ -163,8 +277,12 @@ class Footer extends StatelessWidget {
           ),
           Container(
             alignment: Alignment.center,
-            height: 40,
-            child: Text("Copyright"),
+            height: 60,
+            color: Colors.white10,
+            child: Text(
+              "Copyright",
+              style: TextStyle(color: Colors.white),
+            ),
           )
         ],
       ),

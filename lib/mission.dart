@@ -29,7 +29,6 @@ class Mission extends StatelessWidget {
               ResponsiveGridCol(
                   lg: 4,
                   child: Card(
-                    elevation: 6.0,
                     child: Container(
                       height: 480,
                       decoration: BoxDecoration(
@@ -85,7 +84,6 @@ class Mission extends StatelessWidget {
               ResponsiveGridCol(
                   lg: 4,
                   child: Card(
-                    elevation: 6.0,
                     child: Container(
                       height: 480,
                       decoration: BoxDecoration(
@@ -141,7 +139,6 @@ class Mission extends StatelessWidget {
               ResponsiveGridCol(
                   lg: 4,
                   child: Card(
-                    elevation: 6.0,
                     child: Container(
                       height: 480,
                       margin: EdgeInsets.only(right: 8.0, left: 8),
