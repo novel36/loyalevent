@@ -20,6 +20,7 @@ class _EventPageState extends State<EventPage> {
         // hero
 
         // next event
+
         NextEvent(),
         SizedBox(height: 20),
         Container(

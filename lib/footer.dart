@@ -267,9 +267,11 @@ class Footer extends StatelessWidget {
                   ),
                   Expanded(
                     child: Container(
-                        child: Image(
-                      image: AssetImage("assets/images/buna.jpg"),
-                    )),
+                      //     child: Image(
+                      //   image: AssetImage("assets/images/buna.jpg",),
+                      // )
+                      child: Text("image goes here"),
+                    ),
                   ),
                 ],
               ),

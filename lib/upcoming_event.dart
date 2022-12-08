@@ -26,10 +26,11 @@ class UpcomingEvent extends StatelessWidget {
                     // Image(image: AssetImage('assets/images/event1.jpg'),),8
                     Container(
                       width: 350,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/images/party.jpg'),
-                              fit: BoxFit.cover)),
+                      // decoration: BoxDecoration(
+                      //     image: DecorationImage(
+                      //         image: AssetImage('assets/images/party.jpg'),
+                      //         fit: BoxFit.cover)
+                      //         ),
                     ),
                     Expanded(
                       flex: 2,
@@ -97,10 +98,10 @@ class UpcomingEvent extends StatelessWidget {
                     // Image(image: AssetImage('assets/images/event1.jpg'),),8
                     Container(
                       width: 350,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/images/event1.jpg'),
-                              fit: BoxFit.cover)),
+                      // decoration: BoxDecoration(
+                      //     image: DecorationImage(
+                      //         image: AssetImage('assets/images/event1.jpg'),
+                      //         fit: BoxFit.cover)),
                     ),
                     Expanded(
                       flex: 2,
@@ -169,9 +170,10 @@ class UpcomingEvent extends StatelessWidget {
                     Container(
                       width: 350,
                       decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/images/events.jpg'),
-                              fit: BoxFit.cover)),
+                          // image: DecorationImage(
+                          //     image: AssetImage('assets/images/events.jpg'),
+                          //     fit: BoxFit.cover)
+                          ),
                     ),
                     Expanded(
                       flex: 2,
@@ -240,9 +242,10 @@ class UpcomingEvent extends StatelessWidget {
                     Container(
                       width: 350,
                       decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/images/event2.jpg'),
-                              fit: BoxFit.cover)),
+                          // image: DecorationImage(
+                          //     image: AssetImage('assets/images/event2.jpg'),
+                          //     fit: BoxFit.cover)
+                          ),
                     ),
                     Expanded(
                       flex: 2,

@@ -138,10 +138,11 @@ class EventVenues extends StatelessWidget {
                           flex: 3,
                           child: Container(
                               decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/images/hyattregency.jpg'),
-                                      fit: BoxFit.cover)))),
+                                  // image: DecorationImage(
+                                  //     image: AssetImage(
+                                  //         'assets/images/hyattregency.jpg'),
+                                  //     fit: BoxFit.cover)
+                                  ))),
                       Expanded(
                           flex: 1,
                           child: Container(
@@ -177,11 +178,13 @@ class EventVenues extends StatelessWidget {
                       Expanded(
                           flex: 3,
                           child: Container(
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image:
-                                          AssetImage('assets/images/party.jpg'),
-                                      fit: BoxFit.cover)))),
+                              // decoration: BoxDecoration(
+                              //     image: DecorationImage(
+                              //         image:
+                              //             AssetImage('assets/images/party.jpg'),
+                              //         fit: BoxFit.cover)
+                              //         )
+                              )),
                       Expanded(
                           flex: 1,
                           child: Container(
@@ -216,11 +219,12 @@ class EventVenues extends StatelessWidget {
                       Expanded(
                           flex: 3,
                           child: Container(
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/images/sheraton.jpg'),
-                                      fit: BoxFit.cover)))),
+                              // decoration: BoxDecoration(
+                              //     image: DecorationImage(
+                              //         image: AssetImage(
+                              //             'assets/images/sheraton.jpg'),
+                              //         fit: BoxFit.cover))
+                              )),
                       Expanded(
                           flex: 1,
                           child: Container(
@@ -257,10 +261,11 @@ class EventVenues extends StatelessWidget {
                           flex: 3,
                           child: Container(
                               decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/images/skylighthotel.jpeg'),
-                                      fit: BoxFit.cover)))),
+                                  // image: DecorationImage(
+                                  //     image: AssetImage(
+                                  //         'assets/images/skylighthotel.jpeg'),
+                                  //     fit: BoxFit.cover)
+                                  ))),
                       Expanded(
                           flex: 1,
                           child: Container(
