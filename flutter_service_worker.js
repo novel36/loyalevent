@@ -3,16 +3,7 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "d3988f3381a7723f4a3d6a540abea1d3",
-"assets/assets/images/buna.jpg": "05d60c157ff36ae720860655153262a0",
-"assets/assets/images/event1.jpg": "ae3b9de0979fe690a56aa30774d8a48b",
-"assets/assets/images/event2.jpg": "3518e0950b6a390c8f3dfecee8ea756e",
-"assets/assets/images/events.jpg": "a92812d89003141005c77a03d09b1461",
-"assets/assets/images/hyattregency.jpg": "42b245f96e5378557c6fff1694950384",
-"assets/assets/images/party.jpg": "4390aecaef0c33a343538dc8a864ad78",
-"assets/assets/images/sheraton.jpg": "3d1b5cba58f15f5acdda788246cf7e98",
-"assets/assets/images/skylighthotel.jpeg": "3c397a4db9c5ab957ef9038d1b03a40f",
-"assets/assets/images/teddyafiro.jpg": "fd51a50d701b184c3487639736c85e77",
+  "assets/AssetManifest.json": "2efbb41d7877d10aac9d091f58ccd7b9",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
 "assets/NOTICES": "54e880052da9178b6cc91c5bc62d25fb",
@@ -27,9 +18,9 @@ const RESOURCES = {
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "c0a1cb8af7bfe0823d3760c9601e72b5",
-"/": "c0a1cb8af7bfe0823d3760c9601e72b5",
-"main.dart.js": "af50bb30ed22253d32643324114aa89e",
+"index.html": "8e8cd1cb435c461eef89d838763d7da0",
+"/": "8e8cd1cb435c461eef89d838763d7da0",
+"main.dart.js": "12f38672fa5ce3b2e518818351b739f1",
 "manifest.json": "ab74ab72a17db4bff3cf5cb706b86d8b",
 "version.json": "323f2de8f8e8268012879a427a2858ee"
 };
