@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class Testimonial extends StatelessWidget {
   Testimonial({
@@ -9,7 +10,10 @@ class Testimonial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 550,
+      height: ResponsiveValue(context,
+              defaultValue: 550.0,
+              valueWhen: [Condition.smallerThan(name: TABLET, value: 400.0)])
+          .value!,
       margin: EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -31,9 +35,28 @@ class Testimonial extends StatelessWidget {
                       child: Card(
                         child: Container(
                           alignment: Alignment.topCenter,
-                          width: 300,
-                          padding:
-                              EdgeInsets.only(top: 48, right: 32, left: 32),
+                          width: ResponsiveValue(context,
+                              defaultValue: 300.0,
+                              valueWhen: [
+                                Condition.smallerThan(name: TABLET, value: 0.0)
+                              ]).value!,
+                          padding: EdgeInsets.only(
+                              top: ResponsiveValue(context,
+                                  defaultValue: 48.0,
+                                  valueWhen: [
+                                    Condition.smallerThan(
+                                        name: TABLET, value: 32.0)
+                                  ]).value!,
+                              right: ResponsiveValue(context,
+                                  defaultValue: 32.0,
+                                  valueWhen: [
+                                    Condition.smallerThan(
+                                        name: TABLET, value: 8.0)
+                                  ]).value!,
+                              left:
+                                  ResponsiveValue(context, defaultValue: 32.0, valueWhen: [
+                                Condition.smallerThan(name: TABLET, value: 8.0)
+                              ]).value!),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
@@ -43,9 +66,16 @@ class Testimonial extends StatelessWidget {
                                 height: 20,
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(ResponsiveValue(context,
+                                    defaultValue: 8.0,
+                                    valueWhen: [
+                                      Condition.smallerThan(
+                                          name: TABLET, value: 2.0)
+                                    ]).value!),
                                 child: Text(
-                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "),
+                                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+                                  style: TextStyle(fontSize: 12),
+                                ),
                               )
                             ],
                           ),
@@ -74,7 +104,11 @@ class Testimonial extends StatelessWidget {
                 autoPlayCurve: Curves.fastOutSlowIn,
                 enableInfiniteScroll: true,
                 autoPlayAnimationDuration: Duration(milliseconds: 800),
-                viewportFraction: 0.4,
+                viewportFraction: ResponsiveValue(context,
+                    defaultValue: 0.45,
+                    valueWhen: [
+                      Condition.smallerThan(name: TABLET, value: 0.8)
+                    ]).value!,
               ),
             ),
           ),

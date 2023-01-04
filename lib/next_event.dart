@@ -1,6 +1,7 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class NextEvent extends StatelessWidget {
   const NextEvent({
@@ -10,8 +11,10 @@ class NextEvent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16),
-      height: 300,
+      padding: EdgeInsets.all(8.0),
+      height: ResponsiveValue(context,
+          defaultValue: 250.0,
+          valueWhen: [Condition.smallerThan(name: MOBILE, value: 200.0)]).value,
       color: Colors.white,
       child: Column(
         children: [
@@ -22,13 +25,14 @@ class NextEvent extends StatelessWidget {
             child: Text(
               "Next Event Will Start In",
               style: TextStyle(
-                  fontSize: 32,
+                  fontSize: ResponsiveValue(context,
+                      defaultValue: 28.0,
+                      valueWhen: [
+                        Condition.smallerThan(name: TABLET, value: 24.0)
+                      ]).value,
                   fontWeight: FontWeight.bold,
                   color: Colors.black87),
             ),
-          ),
-          SizedBox(
-            height: 16,
           ),
           Expanded(
               child: Container(
@@ -43,9 +47,13 @@ class NextEvent extends StatelessWidget {
                     Column(
                       children: [
                         Container(
+                          padding: EdgeInsets.all(8.0),
                           alignment: Alignment.center,
-                          height: 90,
-                          width: 80,
+                          height: ResponsiveValue(context,
+                              defaultValue: 90.0,
+                              valueWhen: [
+                                Condition.smallerThan(name: TABLET, value: 60.0)
+                              ]).value,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(16.0),
                               border: Border.all(
@@ -54,11 +62,21 @@ class NextEvent extends StatelessWidget {
                           child: Text(
                             "02",
                             style: TextStyle(
-                                fontSize: 48, fontWeight: FontWeight.bold),
+                                fontSize: ResponsiveValue(context,
+                                    defaultValue: 48.0,
+                                    valueWhen: [
+                                      Condition.smallerThan(
+                                          name: TABLET, value: 26.0)
+                                    ]).value,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                         SizedBox(
-                          height: 16,
+                          height: ResponsiveValue(context,
+                              defaultValue: 16.0,
+                              valueWhen: [
+                                Condition.smallerThan(name: TABLET, value: 8.0)
+                              ]).value,
                         ),
                         Text(
                           "Days",
@@ -68,13 +86,21 @@ class NextEvent extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      width: 32,
+                      width: ResponsiveValue(context,
+                          defaultValue: 32.0,
+                          valueWhen: [
+                            Condition.smallerThan(name: TABLET, value: 16.0)
+                          ]).value,
                     ),
                     Column(
                       children: [
                         Container(
-                          height: 90,
-                          width: 80,
+                          height: ResponsiveValue(context,
+                              defaultValue: 90.0,
+                              valueWhen: [
+                                Condition.smallerThan(name: TABLET, value: 60.0)
+                              ]).value,
+                          padding: EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(16.0),
                               border: Border.all(
@@ -84,11 +110,21 @@ class NextEvent extends StatelessWidget {
                           child: Text(
                             "09",
                             style: TextStyle(
-                                fontSize: 48, fontWeight: FontWeight.bold),
+                                fontSize: ResponsiveValue(context,
+                                    defaultValue: 48.0,
+                                    valueWhen: [
+                                      Condition.smallerThan(
+                                          name: TABLET, value: 26.0)
+                                    ]).value,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                         SizedBox(
-                          height: 16,
+                          height: ResponsiveValue(context,
+                              defaultValue: 16.0,
+                              valueWhen: [
+                                Condition.smallerThan(name: TABLET, value: 8.0)
+                              ]).value,
                         ),
                         Text(
                           "Hours",
@@ -98,14 +134,22 @@ class NextEvent extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      width: 32,
+                      width: ResponsiveValue(context,
+                          defaultValue: 32.0,
+                          valueWhen: [
+                            Condition.smallerThan(name: MOBILE, value: 16.0)
+                          ]).value,
                     ),
                     Column(
                       children: [
                         Container(
                           alignment: Alignment.center,
-                          height: 90,
-                          width: 80,
+                          height: ResponsiveValue(context,
+                              defaultValue: 90.0,
+                              valueWhen: [
+                                Condition.smallerThan(name: MOBILE, value: 60.0)
+                              ]).value,
+                          padding: EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(16.0),
                               border: Border.all(
@@ -114,11 +158,21 @@ class NextEvent extends StatelessWidget {
                           child: Text(
                             "45",
                             style: TextStyle(
-                                fontSize: 48, fontWeight: FontWeight.bold),
+                                fontSize: ResponsiveValue(context,
+                                    defaultValue: 48.0,
+                                    valueWhen: [
+                                      Condition.smallerThan(
+                                          name: MOBILE, value: 26.0)
+                                    ]).value,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                         SizedBox(
-                          height: 16,
+                          height: ResponsiveValue(context,
+                              defaultValue: 16.0,
+                              valueWhen: [
+                                Condition.smallerThan(name: TABLET, value: 8.0)
+                              ]).value,
                         ),
                         Text(
                           "Minutes",
@@ -128,14 +182,22 @@ class NextEvent extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      width: 32,
+                      width: ResponsiveValue(context,
+                          defaultValue: 32.0,
+                          valueWhen: [
+                            Condition.smallerThan(name: MOBILE, value: 16.0)
+                          ]).value,
                     ),
                     Column(
                       children: [
                         Container(
                           alignment: Alignment.center,
-                          height: 90,
-                          width: 80,
+                          height: ResponsiveValue(context,
+                              defaultValue: 90.0,
+                              valueWhen: [
+                                Condition.smallerThan(name: MOBILE, value: 60.0)
+                              ]).value,
+                          padding: EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(16.0),
                               border: Border.all(
@@ -144,11 +206,21 @@ class NextEvent extends StatelessWidget {
                           child: Text(
                             "15",
                             style: TextStyle(
-                                fontSize: 48, fontWeight: FontWeight.bold),
+                                fontSize: ResponsiveValue(context,
+                                    defaultValue: 48.0,
+                                    valueWhen: [
+                                      Condition.smallerThan(
+                                          name: MOBILE, value: 26.0)
+                                    ]).value,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                         SizedBox(
-                          height: 16,
+                          height: ResponsiveValue(context,
+                              defaultValue: 16.0,
+                              valueWhen: [
+                                Condition.smallerThan(name: TABLET, value: 8.0)
+                              ]).value,
                         ),
                         Text(
                           "Seconds",

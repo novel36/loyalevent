@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_grid/responsive_grid.dart';
 
 class Mission extends StatelessWidget {
@@ -9,7 +10,12 @@ class Mission extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.symmetric(horizontal: 64.0),
+        margin: EdgeInsets.symmetric(
+            horizontal: ResponsiveValue(context,
+                defaultValue: 64.0,
+                valueWhen: [
+              Condition.smallerThan(name: TABLET, value: 8.0)
+            ]).value!),
         alignment: Alignment.center,
         // color: Colors.grey,
         child: ResponsiveGridRow(
@@ -21,8 +27,8 @@ class Mission extends StatelessWidget {
                   padding: const EdgeInsets.all(32.0),
                   child: Center(
                       child: Text(
-                    "Our Mission ...",
-                    style: TextStyle(fontSize: 38),
+                    "Our",
+                    style: TextStyle(fontSize: 28),
                   )),
                 ),
               ),

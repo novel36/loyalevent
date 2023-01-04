@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -6,6 +7,8 @@ import 'package:loyalevent/mission.dart';
 import 'package:loyalevent/next_event.dart';
 import 'package:loyalevent/testimonial.dart';
 import 'package:loyalevent/upcoming_event.dart';
+import 'package:responsive_framework/responsive_framework.dart';
+import 'package:responsive_framework/utils/responsive_utils.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,13 +24,15 @@ class _HomePageState extends State<HomePage> {
       children: [
         // hero
         Container(
-            padding: EdgeInsets.only(left: 96.0),
+            padding: EdgeInsets.only(left: 16.0),
             child: Stack(
               alignment: AlignmentDirectional.centerStart,
               children: [
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: kIsWeb
+                      ? CrossAxisAlignment.center
+                      : CrossAxisAlignment.start,
                   children: [
                     Container(
                       height: 180,
@@ -36,7 +41,12 @@ class _HomePageState extends State<HomePage> {
                         "A good place to Find the perfect event",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 48,
+                            fontSize: ResponsiveValue(context,
+                                defaultValue: 48.0,
+                                valueWhen: const [
+                                  Condition.smallerThan(
+                                      name: TABLET, value: 38.0),
+                                ]).value,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -53,43 +63,85 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(
                       height: 32,
                     ),
-                    Row(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 16.0, vertical: 8.0),
-                          alignment: Alignment.center,
-                          color: Colors.purple,
-                          child: Text(
-                            "About us",
-                            style: TextStyle(fontSize: 16, color: Colors.white),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 16.0, vertical: 8.0),
-                          alignment: Alignment.center,
-                          color: Colors.deepPurple,
-                          child: Text(
-                            "Book Events",
-                            style: TextStyle(fontSize: 16, color: Colors.white),
-                          ),
-                        ),
-                      ],
-                    )
+                    ResponsiveVisibility(
+                        visible: false,
+                        visibleWhen: [Condition.largerThan(name: MOBILE)],
+                        child: Row(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 16.0, vertical: 8.0),
+                              alignment: Alignment.center,
+                              color: Colors.purple,
+                              child: Text(
+                                "About us",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 16.0, vertical: 8.0),
+                              alignment: Alignment.center,
+                              color: Colors.deepPurple,
+                              child: Text(
+                                "Book Events",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        )),
+                    ResponsiveVisibility(
+                        visible: false,
+                        visibleWhen: [Condition.smallerThan(name: TABLET)],
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 16.0, vertical: 8.0),
+                              alignment: Alignment.center,
+                              color: Colors.purple,
+                              child: Text(
+                                "About us",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 16.0, vertical: 8.0),
+                              alignment: Alignment.center,
+                              color: Colors.deepPurple,
+                              child: Text(
+                                "Book Events",
+                                style: TextStyle(
+                                    fontSize: 16, color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ))
                   ],
                 ),
-                Positioned(
-                    bottom: 40,
-                    right: 64,
-                    child: Container(
-                      color: Colors.grey,
-                      width: 200,
-                      height: 200,
-                    ))
+                ResponsiveVisibility(
+                  visible: false,
+                  visibleWhen: [Condition.largerThan(name: TABLET)],
+                  child: Positioned(
+                      bottom: 40,
+                      right: 64,
+                      child: Container(
+                        color: Colors.grey,
+                        width: 200,
+                        height: 200,
+                      )),
+                )
               ],
             ),
             height: 450,
