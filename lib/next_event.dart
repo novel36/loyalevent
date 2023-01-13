@@ -44,95 +44,7 @@ class NextEvent extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(8.0),
-                          alignment: Alignment.center,
-                          height: ResponsiveValue(context,
-                              defaultValue: 90.0,
-                              valueWhen: [
-                                Condition.smallerThan(name: TABLET, value: 60.0)
-                              ]).value,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16.0),
-                              border: Border.all(
-                                  color: Colors.black,
-                                  style: BorderStyle.solid)),
-                          child: Text(
-                            "02",
-                            style: TextStyle(
-                                fontSize: ResponsiveValue(context,
-                                    defaultValue: 48.0,
-                                    valueWhen: [
-                                      Condition.smallerThan(
-                                          name: TABLET, value: 26.0)
-                                    ]).value,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        SizedBox(
-                          height: ResponsiveValue(context,
-                              defaultValue: 16.0,
-                              valueWhen: [
-                                Condition.smallerThan(name: TABLET, value: 8.0)
-                              ]).value,
-                        ),
-                        Text(
-                          "Days",
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      width: ResponsiveValue(context,
-                          defaultValue: 32.0,
-                          valueWhen: [
-                            Condition.smallerThan(name: TABLET, value: 16.0)
-                          ]).value,
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          height: ResponsiveValue(context,
-                              defaultValue: 90.0,
-                              valueWhen: [
-                                Condition.smallerThan(name: TABLET, value: 60.0)
-                              ]).value,
-                          padding: EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16.0),
-                              border: Border.all(
-                                  color: Colors.black,
-                                  style: BorderStyle.solid)),
-                          alignment: Alignment.center,
-                          child: Text(
-                            "09",
-                            style: TextStyle(
-                                fontSize: ResponsiveValue(context,
-                                    defaultValue: 48.0,
-                                    valueWhen: [
-                                      Condition.smallerThan(
-                                          name: TABLET, value: 26.0)
-                                    ]).value,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        SizedBox(
-                          height: ResponsiveValue(context,
-                              defaultValue: 16.0,
-                              valueWhen: [
-                                Condition.smallerThan(name: TABLET, value: 8.0)
-                              ]).value,
-                        ),
-                        Text(
-                          "Hours",
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
+                    dateTimeMinutes(context, title: "Days", value: "00"),
                     SizedBox(
                       width: ResponsiveValue(context,
                           defaultValue: 32.0,
@@ -140,47 +52,7 @@ class NextEvent extends StatelessWidget {
                             Condition.smallerThan(name: MOBILE, value: 16.0)
                           ]).value,
                     ),
-                    Column(
-                      children: [
-                        Container(
-                          alignment: Alignment.center,
-                          height: ResponsiveValue(context,
-                              defaultValue: 90.0,
-                              valueWhen: [
-                                Condition.smallerThan(name: MOBILE, value: 60.0)
-                              ]).value,
-                          padding: EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16.0),
-                              border: Border.all(
-                                  color: Colors.black,
-                                  style: BorderStyle.solid)),
-                          child: Text(
-                            "45",
-                            style: TextStyle(
-                                fontSize: ResponsiveValue(context,
-                                    defaultValue: 48.0,
-                                    valueWhen: [
-                                      Condition.smallerThan(
-                                          name: MOBILE, value: 26.0)
-                                    ]).value,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        SizedBox(
-                          height: ResponsiveValue(context,
-                              defaultValue: 16.0,
-                              valueWhen: [
-                                Condition.smallerThan(name: TABLET, value: 8.0)
-                              ]).value,
-                        ),
-                        Text(
-                          "Minutes",
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
+                    dateTimeMinutes(context, title: "Hours", value: "00"),
                     SizedBox(
                       width: ResponsiveValue(context,
                           defaultValue: 32.0,
@@ -188,47 +60,15 @@ class NextEvent extends StatelessWidget {
                             Condition.smallerThan(name: MOBILE, value: 16.0)
                           ]).value,
                     ),
-                    Column(
-                      children: [
-                        Container(
-                          alignment: Alignment.center,
-                          height: ResponsiveValue(context,
-                              defaultValue: 90.0,
-                              valueWhen: [
-                                Condition.smallerThan(name: MOBILE, value: 60.0)
-                              ]).value,
-                          padding: EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16.0),
-                              border: Border.all(
-                                  color: Colors.black,
-                                  style: BorderStyle.solid)),
-                          child: Text(
-                            "15",
-                            style: TextStyle(
-                                fontSize: ResponsiveValue(context,
-                                    defaultValue: 48.0,
-                                    valueWhen: [
-                                      Condition.smallerThan(
-                                          name: MOBILE, value: 26.0)
-                                    ]).value,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        SizedBox(
-                          height: ResponsiveValue(context,
-                              defaultValue: 16.0,
-                              valueWhen: [
-                                Condition.smallerThan(name: TABLET, value: 8.0)
-                              ]).value,
-                        ),
-                        Text(
-                          "Seconds",
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    )
+                    dateTimeMinutes(context, title: "Minutes", value: "00"),
+                    SizedBox(
+                      width: ResponsiveValue(context,
+                          defaultValue: 32.0,
+                          valueWhen: [
+                            Condition.smallerThan(name: MOBILE, value: 16.0)
+                          ]).value,
+                    ),
+                    dateTimeMinutes(context, title: "Seconds", value: "01"),
                   ],
                 )
               ],
@@ -236,6 +76,46 @@ class NextEvent extends StatelessWidget {
           )),
         ],
       ),
+    );
+  }
+
+  Column dateTimeMinutes(BuildContext context,
+      {String? title, required String? value}) {
+    return Column(
+      children: [
+        Container(
+          padding: EdgeInsets.all(8.0),
+          alignment: Alignment.center,
+          height: ResponsiveValue(context,
+                  defaultValue: 90.0,
+                  valueWhen: [Condition.smallerThan(name: TABLET, value: 60.0)])
+              .value,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16.0),
+              border:
+                  Border.all(color: Colors.black, style: BorderStyle.solid)),
+          child: Text(
+            value!,
+            style: TextStyle(
+                fontSize: ResponsiveValue(context,
+                    defaultValue: 48.0,
+                    valueWhen: [
+                      Condition.smallerThan(name: TABLET, value: 26.0)
+                    ]).value,
+                fontWeight: FontWeight.bold),
+          ),
+        ),
+        SizedBox(
+          height: ResponsiveValue(context,
+                  defaultValue: 16.0,
+                  valueWhen: [Condition.smallerThan(name: TABLET, value: 8.0)])
+              .value,
+        ),
+        Text(
+          title!,
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+      ],
     );
   }
 }

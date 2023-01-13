@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_improved_scrolling/flutter_improved_scrolling.dart';
+import 'package:lottie/lottie.dart';
 import 'package:loyalevent/footer.dart';
 import 'package:loyalevent/mission.dart';
 import 'package:loyalevent/next_event.dart';
@@ -47,15 +48,22 @@ class _HomePageState extends State<HomePage> {
         children: [
           // hero
           Container(
-              padding: EdgeInsets.only(left: 16.0),
+              padding: EdgeInsets.only(
+                  left: ResponsiveValue(context,
+                      defaultValue: 106.0,
+                      valueWhen: [
+                    Condition.smallerThan(name: TABLET, value: 32.0)
+                  ]).value!),
               child: Stack(
                 alignment: AlignmentDirectional.centerStart,
                 children: [
                   Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: kIsWeb
+                        ? MainAxisAlignment.center
+                        : MainAxisAlignment.start,
                     crossAxisAlignment: kIsWeb
-                        ? CrossAxisAlignment.center
-                        : CrossAxisAlignment.start,
+                        ? CrossAxisAlignment.start
+                        : CrossAxisAlignment.center,
                     children: [
                       Container(
                         height: 180,
@@ -157,17 +165,18 @@ class _HomePageState extends State<HomePage> {
                     visible: false,
                     visibleWhen: [Condition.largerThan(name: TABLET)],
                     child: Positioned(
-                        bottom: 40,
                         right: 64,
                         child: Container(
-                          color: Colors.grey,
-                          width: 200,
-                          height: 200,
+                          width: 400,
+                          child: Lottie.asset(
+                            'assets/intro.json',
+                          ),
+                          height: 400,
                         )),
                   )
                 ],
               ),
-              height: 450,
+              height: 400,
               color: Colors.red),
           SizedBox(height: 20),
           // next event

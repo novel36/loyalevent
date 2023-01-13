@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-class UpcomingEvent extends StatelessWidget {
-  const UpcomingEvent({
+class eventVenues extends StatelessWidget {
+  const eventVenues({
     Key? key,
   }) : super(key: key);
 
@@ -14,32 +14,25 @@ class UpcomingEvent extends StatelessWidget {
       color: Colors.white,
       child: Column(
         children: [
-          Text(
-            "Upcoming Events",
-            style: TextStyle(fontSize: 19),
-          ),
-          SizedBox(
-            height: 16.0,
-          ),
           GridView.count(
             shrinkWrap: true,
             crossAxisCount: ResponsiveValue(context,
                     defaultValue: 4,
                     valueWhen: [Condition.smallerThan(name: TABLET, value: 1)])
                 .value!,
-            mainAxisSpacing: 3.0,
-            crossAxisSpacing: 3.0,
-            childAspectRatio: 0.8,
+            mainAxisSpacing: 2.0,
+            crossAxisSpacing: 2.0,
+            childAspectRatio: 1.0,
             children: [
-              getEvents("assets/images/bermel.jpg"),
-              getEvents("assets/images/karate.jpg"),
-              getEvents("assets/images/tsedey.jpg"),
-              getEvents("assets/images/rophnan.jpg"),
-              getEvents("assets/images/karate.jpg"),
-              getEvents("assets/images/womenleft.jpg"),
-              getEvents("assets/images/buyethiopian.jpg"),
-              getEvents("assets/images/codingtime.jpg"),
-              getEvents("assets/images/yelem.jpg"),
+              //  width: 350,
+              //     height: 400,
+              getEvents(),
+              getEvents(),
+              getEvents(),
+              getEvents(),
+              getEvents(),
+              getEvents(),
+              getEvents(),
             ],
           ),
           SizedBox(
@@ -50,7 +43,7 @@ class UpcomingEvent extends StatelessWidget {
                   backgroundColor: MaterialStateProperty.all(Colors.pink)),
               onPressed: () {},
               child: Text(
-                "Load More",
+                "Load ...",
                 style: TextStyle(fontSize: 11),
               ))
         ],
@@ -58,7 +51,7 @@ class UpcomingEvent extends StatelessWidget {
     );
   }
 
-  Card getEvents(String imagename) {
+  Card getEvents() {
     return Card(
         child: Padding(
       padding: const EdgeInsets.all(4.0),
@@ -68,15 +61,16 @@ class UpcomingEvent extends StatelessWidget {
           child: Stack(
             children: [
               Container(
+                // color: Colors.red,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4.0),
                     image: DecorationImage(
-                        image: AssetImage(imagename), fit: BoxFit.cover)),
+                        image: AssetImage("assets/images/asset1.jpg"))),
               ),
               Opacity(
                 opacity: 0.8,
                 child: Container(
-                  padding: EdgeInsets.only(left: 8.0, top: 32),
+                  padding: EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
                     color: Colors.white,
                   ),
@@ -111,9 +105,6 @@ class UpcomingEvent extends StatelessWidget {
                   "Meskel adebabay ,Addis abeba",
                   style: TextStyle(fontSize: 12),
                 ),
-                SizedBox(
-                  height: 8.0,
-                ),
                 Row(
                   children: [
                     TextButton(
@@ -123,22 +114,23 @@ class UpcomingEvent extends StatelessWidget {
                               MaterialStateProperty.all(EdgeInsets.all(0))),
                       child: Text("Book Now",
                           style: TextStyle(
-                            fontSize: 10.0,
+                            fontSize: 12.0,
                             color: Colors.pink,
                           )),
                     ),
                     SizedBox(
                       width: 4.0,
                     ),
-                    ElevatedButton(
+                    TextButton(
                         style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all(Colors.pink)),
+                            padding:
+                                MaterialStateProperty.all(EdgeInsets.all(0))),
                         onPressed: () {},
-                        child: Text(
-                          "Detail",
-                          style: TextStyle(fontSize: 11.0),
-                        )),
+                        child: Text("Detail",
+                            style: TextStyle(
+                              fontSize: 12.0,
+                              color: Colors.pink,
+                            ))),
                     SizedBox(
                       width: 16.0,
                     ),

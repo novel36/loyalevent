@@ -35,67 +35,71 @@ class _EventPageState extends State<EventPage> {
               SizedBox(
                 height: 32.0,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    alignment: Alignment.center,
-                    width: 90,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: Colors.pink),
-                      color: Colors.white,
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      width: 90,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(color: Colors.pink),
+                        color: Colors.white,
+                      ),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                      child: Text("All", style: TextStyle(color: Colors.black)),
                     ),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                    child: Text("All", style: TextStyle(color: Colors.black)),
-                  ),
-                  SizedBox(
-                    width: 8.0,
-                  ),
-                  Container(
-                    width: 90,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Colors.pink,
+                    SizedBox(
+                      width: 8.0,
                     ),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                    child: Text("Music", style: TextStyle(color: Colors.white)),
-                  ),
-                  SizedBox(
-                    width: 8.0,
-                  ),
-                  Container(
-                    alignment: Alignment.center,
-                    width: 90,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Colors.pink,
+                    Container(
+                      width: 90,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Colors.pink,
+                      ),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                      child:
+                          Text("Music", style: TextStyle(color: Colors.white)),
                     ),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                    child: Text("Art", style: TextStyle(color: Colors.white)),
-                  ),
-                  SizedBox(
-                    width: 8.0,
-                  ),
-                  Container(
-                    alignment: Alignment.center,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Colors.pink,
+                    SizedBox(
+                      width: 8.0,
                     ),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 4.0, vertical: 8.0),
-                    child: Text(
-                      "Conference",
-                      style: TextStyle(color: Colors.white),
+                    Container(
+                      alignment: Alignment.center,
+                      width: 90,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Colors.pink,
+                      ),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                      child: Text("Art", style: TextStyle(color: Colors.white)),
                     ),
-                  )
-                ],
+                    SizedBox(
+                      width: 8.0,
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Colors.pink,
+                      ),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 4.0, vertical: 8.0),
+                      child: Text(
+                        "Conference",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ],
           ),

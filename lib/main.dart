@@ -1,8 +1,10 @@
 import 'dart:html';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:loyalevent/Contactus/contactus.dart';
 import 'package:loyalevent/EventPage/event.dart';
+import 'package:loyalevent/Gallery.dart';
 import 'package:loyalevent/Home/home.dart';
 import 'package:loyalevent/VenuePage/venue.dart';
 import 'package:loyalevent/footer.dart';
@@ -48,6 +50,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
   late TabController _controller;
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  int currentSelectedColor = 0;
+
   @override
   void initState() {
     super.initState();
@@ -58,27 +63,54 @@ class _MyHomePageState extends State<MyHomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: Drawer(),
+        key: _scaffoldKey,
+        drawer: Drawer(
+          backgroundColor: Colors.white,
+          child: ListView(
+            // Important: Remove any padding from the ListView.
+            padding: EdgeInsets.zero,
+            children: [
+              AppBar(
+                backgroundColor: Color.fromARGB(255, 207, 67, 57),
+                title: Text("Loyalevent"),
+                leading: IconButton(onPressed: () {}, icon: Icon(Icons.close)),
+              ),
+              NavButton(buttonIndex: 0, text: "Home"),
+              NavButton(buttonIndex: 1, text: "Event"),
+              NavButton(buttonIndex: 2, text: "Venue"),
+              NavButton(buttonIndex: 3, text: "Gallery"),
+              NavButton(buttonIndex: 4, text: "Contact us"),
+              ElevatedButton(
+                  style: ButtonStyle(),
+                  onPressed: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Text("Register"),
+                  )),
+            ],
+          ),
+        ),
         appBar: AppBar(
+          leading: ResponsiveVisibility(
+            visible: false,
+            visibleWhen: [Condition.smallerThan(name: DESKTOP)],
+            child: IconButton(
+              onPressed: () => _scaffoldKey.currentState!.openDrawer(),
+              icon: Icon(
+                Icons.menu,
+                color: Colors.black,
+              ),
+            ),
+          ),
           backgroundColor: Colors.white,
           toolbarHeight: ResponsiveValue(context,
-                  defaultValue: 80.0,
+                  defaultValue: 50.0,
                   valueWhen: [Condition.smallerThan(name: TABLET, value: 60.0)])
               .value,
-          leading: ResponsiveVisibility(
-              hiddenWhen: [Condition.largerThan(name: TABLET)],
-              child: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.menu,
-                    color: Colors.black,
-                    size: 32,
-                  ))),
           flexibleSpace: Center(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding: const EdgeInsets.symmetric(horizontal: 1.0),
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
@@ -125,63 +157,23 @@ class _MyHomePageState extends State<MyHomePage>
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          TextButton(
-                              onPressed: () {
-                                _controller.animateTo(
-                                  0,
-                                );
-                              },
-                              child: Padding(
-                                padding: const EdgeInsets.all(9.0),
-                                child: Text(
-                                  "Home",
-                                  style: TextStyle(color: Colors.pink),
-                                ),
-                              )),
+                          NavButton(buttonIndex: 0, text: "Home"),
                           SizedBox(
                             width: 8.0,
                           ),
-                          TextButton(
-                              onPressed: () {
-                                _controller.animateTo(1);
-                              },
-                              child: Padding(
-                                padding: const EdgeInsets.all(9.0),
-                                child: Text("Event"),
-                              )),
+                          NavButton(buttonIndex: 1, text: "Event"),
                           SizedBox(
                             width: 8.0,
                           ),
-                          TextButton(
-                              onPressed: () {
-                                _controller.animateTo(2);
-                              },
-                              child: Padding(
-                                padding: const EdgeInsets.all(9.0),
-                                child: Text("Venue"),
-                              )),
+                          NavButton(buttonIndex: 2, text: "Venue"),
                           SizedBox(
                             width: 8.0,
                           ),
-                          TextButton(
-                              onPressed: () {
-                                _controller.animateTo(3);
-                              },
-                              child: Padding(
-                                padding: const EdgeInsets.all(9.0),
-                                child: Text("Gallery"),
-                              )),
+                          NavButton(buttonIndex: 3, text: "Gallery"),
                           SizedBox(
                             width: 8.0,
                           ),
-                          TextButton(
-                              onPressed: () {
-                                _controller.animateTo(4);
-                              },
-                              child: Padding(
-                                padding: const EdgeInsets.all(9.0),
-                                child: Text("Contact us"),
-                              )),
+                          NavButton(buttonIndex: 4, text: "Contact us"),
                           SizedBox(
                             width: 16.0,
                           ),
@@ -215,11 +207,31 @@ class _MyHomePageState extends State<MyHomePage>
               HomePage(),
               EventPage(),
               VenuePage(),
-              Container(
-                color: Colors.green,
-                child: Text("Gallery"),
-              ),
+              gallery(),
               ContactUs()
             ]));
+  }
+
+  TextButton NavButton({String? text, required int buttonIndex}) {
+    return TextButton(
+        style: ButtonStyle(alignment: Alignment.centerLeft),
+        onPressed: () {
+          _controller.animateTo(
+            buttonIndex,
+          );
+          setState(() {
+            currentSelectedColor = buttonIndex;
+          });
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(9.0),
+          child: Text(
+            text!,
+            style: TextStyle(
+                color: currentSelectedColor == buttonIndex
+                    ? Colors.pink
+                    : Colors.blue),
+          ),
+        ));
   }
 }

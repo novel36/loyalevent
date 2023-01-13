@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loyalevent/event_venues.dart';
 import 'package:loyalevent/footer.dart';
 import 'package:loyalevent/next_event.dart';
 import 'package:loyalevent/upcoming_event.dart';
@@ -30,76 +31,79 @@ class _VenuePageState extends State<VenuePage> {
               SizedBox(
                 height: 32.0,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    alignment: Alignment.center,
-                    width: 90,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: Colors.pink),
-                      color: Colors.white,
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      width: 90,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(color: Colors.pink),
+                        color: Colors.white,
+                      ),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                      child: Text("All", style: TextStyle(color: Colors.black)),
                     ),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                    child: Text("All", style: TextStyle(color: Colors.black)),
-                  ),
-                  SizedBox(
-                    width: 8.0,
-                  ),
-                  Container(
-                    width: 90,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Colors.pink,
+                    SizedBox(
+                      width: 8.0,
                     ),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                    child:
-                        Text("Meeting", style: TextStyle(color: Colors.white)),
-                  ),
-                  SizedBox(
-                    width: 8.0,
-                  ),
-                  Container(
-                    alignment: Alignment.center,
-                    width: 120,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Colors.pink,
+                    Container(
+                      width: 90,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Colors.pink,
+                      ),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                      child: Text("Meeting",
+                          style: TextStyle(color: Colors.white)),
                     ),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                    child: Text("Conference",
-                        style: TextStyle(color: Colors.white)),
-                  ),
-                  SizedBox(
-                    width: 8.0,
-                  ),
-                  Container(
-                    alignment: Alignment.center,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Colors.pink,
+                    SizedBox(
+                      width: 8.0,
                     ),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 4.0, vertical: 8.0),
-                    child: Text(
-                      "Music",
-                      style: TextStyle(color: Colors.white),
+                    Container(
+                      alignment: Alignment.center,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Colors.pink,
+                      ),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                      child: Text("Conference",
+                          style: TextStyle(color: Colors.white)),
                     ),
-                  )
-                ],
+                    SizedBox(
+                      width: 8.0,
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Colors.pink,
+                      ),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 4.0, vertical: 8.0),
+                      child: Text(
+                        "Music",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ],
           ),
         ),
         SizedBox(height: 20),
         // upcoming event
-        EventVenues(),
+        eventVenues(),
         SizedBox(height: 32),
         // Footer
         Footer(),
@@ -294,7 +298,11 @@ class EventVenues extends StatelessWidget {
           SizedBox(
             height: 16.0,
           ),
-          ElevatedButton(onPressed: () {}, child: Text("Load more..."))
+          ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.pink)),
+              onPressed: () {},
+              child: Text("Load more"))
         ],
       ),
     );

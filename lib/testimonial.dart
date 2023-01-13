@@ -87,12 +87,13 @@ class Testimonial extends StatelessWidget {
                         child: Container(
                           height: 80,
                           width: 180,
-                          // decoration: BoxDecoration(
-                          //     shape: BoxShape.circle,
-                          //     image: DecorationImage(
-                          //         fit: BoxFit.contain,
-                          //         image: AssetImage(
-                          //             "assets/images/teddyafiro.jpg"))),
+                          decoration: BoxDecoration(
+                              // color: Colors.black,
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  fit: BoxFit.contain,
+                                  image: AssetImage(
+                                      "assets/images/teddyafiro.jpg"))),
                         )),
                   ],
                 ),
